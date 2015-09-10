@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=$(wildcard $(SRC)*.cpp)
+SOURCES=$(wildcard $(SRC)*.cpp) $(wildcard $(SRC)/*/*.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=gord
 BUILD=build/
