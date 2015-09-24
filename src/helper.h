@@ -1,6 +1,7 @@
 #ifndef HELPER_H
 #define HELPER_H
 
-int add(int x, int y);
+int build(char* name);
+int head(FILE* out);
 
 #endif
