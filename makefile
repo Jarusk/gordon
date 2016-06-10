@@ -8,8 +8,14 @@ BUILD=build/
 SRC=src/
 RELEASE=release/
 DEBUG=debug/
+MKDIR_P=mkdir -p
+RM_DIR=rm -rf
 
-all: $(SOURCES) $(EXECUTABLE)
+all: $(SOURCES) MK_DIRS $(EXECUTABLE)
+
+MK_DIRS:
+	$(MKDIR_P) $(BUILD)
+	$(MKDIR_P) $(RELEASE)
 
 $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(LDFLAGS) $(addprefix $(BUILD),$(notdir $(OBJECTS))) -o $(addprefix $(RELEASE),$(EXECUTABLE))
@@ -20,6 +26,5 @@ $(EXECUTABLE): $(OBJECTS)
 .PHONY: clean
 
 clean:
-	rm -f $(addprefix $(RELEASE),$(EXECUTABLE))
-	rm -f $(addprefix $(DEBUG),$(EXECUTABLE))
-	rm -f $(wildcard $(BUILD)*.o)
+	$(RM_DIR) $(BUILD)
+	$(RM_DIR) $(RELEASE)

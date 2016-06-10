@@ -1,3 +1,1 @@
-func main(){
-  println("Hello World!!!");
-}
+PRINT "Hellow World!!"
