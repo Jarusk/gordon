@@ -1,24 +1,26 @@
 CC=gcc
-CFLAGS=-c -Wall
-LDFLAGS=
+CFLAGS=-c -Wall -fpic
+LDFLAGS=-shared
 SOURCES=$(wildcard $(SRC)*.c) $(wildcard $(SRC)/*/*.c)
+TESTS=$(wildcard $(TEST)*.c) $(wildcard $(TEST)/*/*.c)
 OBJECTS=$(SOURCES:.c=.o)
-EXECUTABLE=gord
+LIBNAME=libgord.so
 BUILD=build/
 SRC=src/
+TEST=testing/
 RELEASE=release/
 DEBUG=debug/
 MKDIR_P=mkdir -p
 RM_DIR=rm -rf
 
-all: $(SOURCES) MK_DIRS $(EXECUTABLE)
+all: $(SOURCES) MK_DIRS $(LIBNAME)
 
 MK_DIRS:
 	$(MKDIR_P) $(BUILD)
 	$(MKDIR_P) $(RELEASE)
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(addprefix $(BUILD),$(notdir $(OBJECTS))) -o $(addprefix $(RELEASE),$(EXECUTABLE))
+$(LIBNAME): $(OBJECTS)
+	$(CC) $(LDFLAGS) $(addprefix $(BUILD),$(notdir $(OBJECTS))) -o $(addprefix $(RELEASE),$(LIBNAME))
 
 .c.o:
 	$(CC) $(CFLAGS) $< -o $(addprefix $(BUILD),$(notdir $@))
