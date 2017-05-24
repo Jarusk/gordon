@@ -1,4 +1,4 @@
-#include "../src/gord.h"
+#include "../include/gord.h"
 
 int main(int argc, char **argv){
 	foo();
