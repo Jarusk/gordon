@@ -3,6 +3,8 @@ CFLAGS=-c -Wall -fpic
 LDFLAGS=-shared
 SOURCES=$(wildcard $(SRC)*.c) $(wildcard $(SRC)/*/*.c)
 TESTS=$(wildcard $(TEST)*.c) $(wildcard $(TEST)/*/*.c)
+CFLAGS_TESTS=-Wall
+LDFLAGS_TESTS=
 OBJECTS=$(SOURCES:.c=.o)
 LIBNAME=libgord.so
 BUILD=build/
@@ -14,6 +16,9 @@ MKDIR_P=mkdir -p
 RM_DIR=rm -rf
 
 all: $(SOURCES) MK_DIRS $(LIBNAME)
+
+tests:
+	$(CC) 
 
 MK_DIRS:
 	$(MKDIR_P) $(BUILD)
