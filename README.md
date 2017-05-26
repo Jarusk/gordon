@@ -11,6 +11,7 @@ Overall, this library will serve to first reimplement certain parts of the C Sta
 -   Aim for C99 compat with unistd.h and signal.h
 -   The kitchen sink
 -   Reinvent the wheel as a 10999 sided polygon chiseled from bedrock
+-   **gord.h** will be a rolling component where I add things like general purpose data structures and pointer chunks
 
 ##Headers
 ####Done
