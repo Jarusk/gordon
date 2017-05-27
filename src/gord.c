@@ -17,3 +17,18 @@ int g_stack_push(Stack *st, Node_Data data){
 	st->size++;
 	return 0;
 }
+
+Node_Data g_stack_pop(Stack *st){
+	if(st->size <= 0){
+		Node_Data d;
+		d.type = NODE_NULL;
+		return d;
+	}
+
+	Node_Data d = st->top->data;
+	SL_Node *tmp = st->top;
+	st->top = st->top->next;
+	free(tmp);
+	st->size--;
+	return d;
+}

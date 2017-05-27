@@ -6,15 +6,18 @@
 // Node type definitions
 //
 //
-#define NODE_IVAL 0
-#define NODE_LVAL 1
-#define NODE_LLVAL 2
-#define NODE_UVAL 3
-#define NODE_ULVAL 4
-#define NODE_ULLVAL 5
-#define NODE_FVAL 6
-#define NODE_DVAL 7
-#define NODE_SVAL 8
+typedef enum node_type {
+	NODE_IVAL,
+	NODE_LVAL,
+	NODE_LLVAL,
+	NODE_UVAL,
+	NODE_ULVAL,
+	NODE_ULLVAL,
+	NODE_FVAL,
+	NODE_DVAL,
+	NODE_SVAL,
+	NODE_NULL
+} Node_Type;
 
 typedef struct node_data {
 	union {
@@ -28,7 +31,7 @@ typedef struct node_data {
 		double dval;
 		char *sval;
 	} data;
-	char type;
+	Node_Type type;
 } Node_Data;
 
 
