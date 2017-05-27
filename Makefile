@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-c -Wall -fpic
+CFLAGS=-c -Wall -fpic -O2
 LDFLAGS=-shared
 SOURCES=$(wildcard $(SRC)*.c) $(wildcard $(SRC)/*/*.c)
 TESTS=$(wildcard $(TEST)*.c) $(wildcard $(TEST)/*/*.c)
