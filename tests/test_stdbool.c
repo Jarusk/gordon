@@ -1,3 +1,5 @@
+#include "../include/stdio.h"
+#include "../include/stdlib.h"
 #include "../include/stdbool.h"
 
 int main(int argc, char **argv){

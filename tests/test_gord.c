@@ -1,15 +1,24 @@
 #include "../include/gord.h"
+#include "../include/stdio.h"
+#include "../include/stdlib.h"
 
-#define NULL ((void*)0)
-
-int main(int argc, char **argv){
-	Stack *st = g_stack_make();
-
+void null_test(Stack *st){
 	if(st->top == NULL){
 		printf("Empty stack\n");
 	}else{
 		printf("Stack has %llu elements\n",st->size);
 	}
+}
+
+int main(int argc, char **argv){
+	Stack *st = (Stack *)g_stack_make();
+
+	null_test(st);
+	
+	union Node_Data u = {.ival=5};
+	g_stack_push(st,NODE_IVAL,u);
+
+	null_test(st);
 
 	return 0;
 }
