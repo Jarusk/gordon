@@ -6,7 +6,7 @@ void null_test(Stack *st){
 	if(st->top == NULL){
 		printf("Empty stack\n");
 	}else{
-		printf("Stack has %llu elements\n",st->size);
+		printf("Stack has %llu element(s)\n",st->size);
 	}
 }
 
