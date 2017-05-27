@@ -15,8 +15,11 @@ int main(int argc, char **argv){
 
 	null_test(st);
 	
-	union Node_Data u = {.ival=5};
-	g_stack_push(st,NODE_IVAL,u);
+	Node_Data u;
+	u.type = NODE_IVAL;
+	u.data.ival = 5;
+
+	g_stack_push(st,u);
 
 	null_test(st);
 
