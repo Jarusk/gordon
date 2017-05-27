@@ -6,18 +6,24 @@
 #define NULL ((void*)0)
 
 // Node type definitions
+//
+//
+
+union Node_Data {
+	int ival;
+	float fval;
+	long lval;
+	char *sval;
+	double *dval;
+	long long llval;
+};
+
+
 typedef struct sl_node SL_Node;
 
 typedef struct sl_node {
 	int type;
-	union {
-		int ival;
-		float fval;
-		long lval;
-		char *sval;
-		double *dval;
-		long long llval;
-	} data;
+	union Node_Data data;
 	SL_Node *next;
 } SL_Node;
 
@@ -25,14 +31,7 @@ typedef struct sl_node {
 typedef struct dl_node DL_Node;
 typedef struct dl_node {
 	int type;
-	union {
-		int ival;
-		float fval;
-		long lval;
-		char *sval;
-		double *dval;
-		long long llval;
-	} data;
+	union Node_Data data;
 	DL_Node *next;
 	DL_Node *prev;
 } DL_Node;
@@ -41,14 +40,7 @@ typedef struct dl_node {
 typedef struct bin_node Bin_Node;
 typedef struct bin_node {
 	int type;
-	union {
-		int ival;
-		float fval;
-		long lval;
-		char *sval;
-		double *dval;
-		long long llval;
-	} data;
+	union Node_Data data;
 	Bin_Node *parent;
 	Bin_Node *left;
 	Bin_Node *right;
@@ -61,6 +53,8 @@ typedef struct stack {
 	unsigned long long size;
 } Stack;
 
-Stack *g_make_stack(void);
+Stack *g__stack_make(void);
+
+int g_stack_push(Stack *st, char *type, union Node_Data data);
 
 #endif

@@ -3,7 +3,7 @@
 #define NULL ((void*)0)
 
 int main(int argc, char **argv){
-	Stack *st = g_make_stack();
+	Stack *st = g_stack_make();
 
 	if(st->top == NULL){
 		printf("Empty stack\n");
