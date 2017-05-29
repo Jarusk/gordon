@@ -33,7 +33,6 @@ static Header *freep = NULL;
 
 
 // morecore requests more memory from the kernel
-
 static Header *morecore(unsigned nu){
 	char *cp, *sbrk(int);
 	Header *up;
@@ -56,8 +55,6 @@ static Header *morecore(unsigned nu){
 
 
 // Malloc stuff
-
-
 void *malloc(size_t nbytes){
 	Header *p, *prevp;
 	Header *morecore(unsigned);
@@ -92,8 +89,6 @@ void *malloc(size_t nbytes){
 }
 
 // Free implementation
-
-
 void free(void *ap){
 	Header *bp, *p;
 
