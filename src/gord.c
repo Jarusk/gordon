@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "../include/stdio.h"
 #include "../include/gord.h"
 #include "../include/stdlib.h"
 
@@ -12,7 +12,7 @@ Stack *g_stack_make(void){
 int g_stack_push(Stack *st, Node_Data data){
 	SL_Node *new = (SL_Node *)malloc(sizeof(SL_Node));
 	new->data = data;
-	new->next = st->top;	
+	new->next = st->top;
 	st->top = new;
 	st->size++;
 	return 0;

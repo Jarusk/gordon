@@ -1,6 +1,6 @@
 #ifndef STDIO_H
 #define STDDIO_H
 
-#include <stdio.h>
+//#include <stdio.h>
 
 #endif
