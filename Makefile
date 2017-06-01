@@ -17,9 +17,6 @@ RM_DIR=rm -rf
 
 all: $(SOURCES) MK_DIRS $(LIBNAME)
 
-tests:
-	$(CC) 
-
 MK_DIRS:
 	$(MKDIR_P) $(BUILD)
 	$(MKDIR_P) $(RELEASE)

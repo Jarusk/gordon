@@ -1,7 +1,6 @@
 #ifndef STDLIB_H
 #define STDLIB_H
 
-//#include <stdlib.h>
 #include "stddef.h"
 
 #define EXIT_FAILURE -1

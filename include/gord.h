@@ -61,7 +61,7 @@ typedef struct bin_node {
 
 
 // Stack implementation
-typedef struct stack {
+typedef struct Stack {
 	SL_Node *top;
 	unsigned long long size;
 } Stack;
