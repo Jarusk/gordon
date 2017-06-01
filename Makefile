@@ -3,15 +3,12 @@ CFLAGS=-c -Wall -fpic -O2
 LDFLAGS=-shared
 SOURCES=$(wildcard $(SRC)*.c) $(wildcard $(SRC)/*/*.c)
 TESTS=$(wildcard $(TEST)*.c) $(wildcard $(TEST)/*/*.c)
-CFLAGS_TESTS=-Wall
-LDFLAGS_TESTS=
 OBJECTS=$(SOURCES:.c=.o)
 LIBNAME=libgord.so
 BUILD=build/
 SRC=src/
 TEST=testing/
 RELEASE=release/
-DEBUG=debug/
 MKDIR_P=mkdir -p
 RM_DIR=rm -rf
 
