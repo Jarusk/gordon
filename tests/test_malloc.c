@@ -3,7 +3,7 @@
 
 #include <sys/mman.h>
 
-#define NELEM 1000000000
+#define NELEM 1000000
 
 int main(int argc, char ** argv){
 	int x = 0;

@@ -44,11 +44,11 @@ int main(int argc, char **argv){
 	u.type = NODE_IVAL;
 	u.data.ival = 5;
 
-	g_stack_push(st,u);
+	g_push(st,u);
 
 	null_test(st);
 
-	Node_Data result = g_stack_pop(st);
+	Node_Data result = g_pop(st);
 	print_node(result);
 
 	null_test(st);

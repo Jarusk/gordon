@@ -9,7 +9,7 @@ Stack *g_stack_make(void){
 	return result;
 }
 
-int g_stack_push(Stack *st, Node_Data data){
+int g_push(Stack *st, Node_Data data){
 	SL_Node *new = (SL_Node *)malloc(sizeof(SL_Node));
 	new->data = data;
 	new->next = st->top;
@@ -18,7 +18,7 @@ int g_stack_push(Stack *st, Node_Data data){
 	return 0;
 }
 
-Node_Data g_stack_pop(Stack *st){
+Node_Data g_pop(Stack *st){
 	if(st->size <= 0){
 		Node_Data d;
 		d.type = NODE_NULL;
