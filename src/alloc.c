@@ -13,19 +13,16 @@
 // Build our headers
 typedef long Align;
 
-union header {
+typedef union header {
 	struct {
 		union header *ptr;
 		unsigned size;
 	} s;
 	Align x;
-};
-
-typedef union header Header;
+} Header;
 
 
 // STATIC Content
-
 static Header base;
 static Header *freep = NULL;
 
