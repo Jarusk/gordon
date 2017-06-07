@@ -14,7 +14,7 @@ for file in test_*.c.run
 do
 	echo $SEP
 	echo -e "Running test: $file \n"
-	LD_LIBRARY_PATH=../release:$LB_LIBRARY_PATH ./$file
+	./$file
 	rm $file
 	echo -e "$SEP\n"
 done
