@@ -4,7 +4,7 @@
 static inline long __syscall0(long num){
 	unsigned long result;
 
-	asm (
+	asm volatile (
 		"syscall"
 		:"=rax"(result)
 		:"rax"(num)
@@ -15,10 +15,10 @@ static inline long __syscall0(long num){
 }
 
 
-static inline long __syscall1(long num, long arg1){
+static long __syscall1(long num, long arg1){
 	unsigned long result;
 
-	asm (
+	asm volatile (
 		"syscall"
 		:"=rax"(result)
 		:"rax"(num),"rdi"(arg1)
@@ -30,7 +30,7 @@ static inline long __syscall1(long num, long arg1){
 static inline long __syscall2(long num, long arg1, long arg2){
 	unsigned long result;
 
-	asm (
+	asm volatile (
 		"syscall"
 		:"=rax"(result)
 		:"rax"(num),"rdi"(arg1),"rsi"(arg2)
@@ -42,7 +42,7 @@ static inline long __syscall2(long num, long arg1, long arg2){
 static inline long __syscall3(long num, long arg1, long arg2, long arg3){
 	unsigned long result;
 
-	asm (
+	asm volatile (
 		"syscall"
 		:"=rax"(result)
 		:"rax"(num),"rdi"(arg1),"rsi"(arg2),"rdx"(arg3)
@@ -55,7 +55,7 @@ static inline long __syscall4(long num, long arg1, long arg2, long arg3, long ar
 	unsigned long result;
 
 	register long r10 asm("r10") = arg4;
-	asm (
+	asm volatile (
 		"syscall"
 		:"=rax"(result)
 		:"rax"(num),"rdi"(arg1),"rsi"(arg2),"rdx"(arg3),"r"(r10)
@@ -70,7 +70,7 @@ static inline long __syscall5(long num, long arg1, long arg2, long arg3, long ar
 	register long r10 asm("r10") = arg4;
 	register long r8 asm("r8") = arg5;
 
-	asm (
+	asm volatile (
 		"syscall"
 		:"=rax"(result)
 		:"rax"(num),"rdi"(arg1),"rsi"(arg2),"rdx"(arg3),"r"(r10),"r"(r8)
@@ -87,7 +87,7 @@ static inline long __syscall6(long num, long arg1, long arg2, long arg3, long ar
 	register long r8 asm("r8") = arg5;
 	register long r9 asm("r9") = arg6;
 
-	asm (
+	asm volatile (
 		"syscall"
 		:"=rax"(result)
 		:"rax"(num),"rdi"(arg1),"rsi"(arg2),"rdx"(arg3),"r"(r10),"r"(r8),"r"(r9)
