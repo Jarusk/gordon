@@ -13,4 +13,7 @@ void free(void *);
 int rand(void);
 
 
+void exit(int status);
+
+
 #endif
