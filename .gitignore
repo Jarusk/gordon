@@ -1,8 +1,13 @@
+# Hide metadata files if generated on macOS
 .DS_Store
 
+# Ignore our build and binary folders
 build/
 release/
 
-*.run
+# Hide our compiled test files
+tests/*.run
 
+# I use the Bear utility for compilation and code completion.
+# This hides the generated commands file
 compile_commands.json
