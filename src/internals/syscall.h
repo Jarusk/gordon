@@ -6,8 +6,8 @@ static inline long __syscall0(long num){
 
 	asm volatile (
 		"syscall"
-		:"=rax"(result)
-		:"rax"(num)
+		:"=a"(result)
+		:"a"(num)
 		:"memory","rcx","r11"
 		);
 
@@ -15,13 +15,13 @@ static inline long __syscall0(long num){
 }
 
 
-static long __syscall1(long num, long arg1){
+static inline long __syscall1(long num, long arg1){
 	unsigned long result;
 
 	asm volatile (
 		"syscall"
-		:"=rax"(result)
-		:"rax"(num),"rdi"(arg1)
+		:"=a"(result)
+		:"a"(num),"D"(arg1)
 		:"memory","rcx","r11"
 		);
 	return result;
@@ -32,8 +32,8 @@ static inline long __syscall2(long num, long arg1, long arg2){
 
 	asm volatile (
 		"syscall"
-		:"=rax"(result)
-		:"rax"(num),"rdi"(arg1),"rsi"(arg2)
+		:"=a"(result)
+		:"a"(num),"D"(arg1),"S"(arg2)
 		:"memory","rcx","r11"
 		);
 	return result;
@@ -44,8 +44,8 @@ static inline long __syscall3(long num, long arg1, long arg2, long arg3){
 
 	asm volatile (
 		"syscall"
-		:"=rax"(result)
-		:"rax"(num),"rdi"(arg1),"rsi"(arg2),"rdx"(arg3)
+		:"=a"(result)
+		:"a"(num),"D"(arg1),"S"(arg2),"d"(arg3)
 		:"memory","rcx","r11"
 		);
 	return result;
@@ -57,8 +57,8 @@ static inline long __syscall4(long num, long arg1, long arg2, long arg3, long ar
 	register long r10 asm("r10") = arg4;
 	asm volatile (
 		"syscall"
-		:"=rax"(result)
-		:"rax"(num),"rdi"(arg1),"rsi"(arg2),"rdx"(arg3),"r"(r10)
+		:"=a"(result)
+		:"a"(num),"D"(arg1),"S"(arg2),"d"(arg3),"r"(r10)
 		:"memory","rcx","r11"
 		);
 	return result;
@@ -72,8 +72,8 @@ static inline long __syscall5(long num, long arg1, long arg2, long arg3, long ar
 
 	asm volatile (
 		"syscall"
-		:"=rax"(result)
-		:"rax"(num),"rdi"(arg1),"rsi"(arg2),"rdx"(arg3),"r"(r10),"r"(r8)
+		:"=a"(result)
+		:"a"(num),"D"(arg1),"S"(arg2),"d"(arg3),"r"(r10),"r"(r8)
 		:"memory","rcx","r11"
 		);
 	return result;
@@ -89,8 +89,8 @@ static inline long __syscall6(long num, long arg1, long arg2, long arg3, long ar
 
 	asm volatile (
 		"syscall"
-		:"=rax"(result)
-		:"rax"(num),"rdi"(arg1),"rsi"(arg2),"rdx"(arg3),"r"(r10),"r"(r8),"r"(r9)
+		:"=a"(result)
+		:"a"(num),"D"(arg1),"S"(arg2),"d"(arg3),"r"(r10),"r"(r8),"r"(r9)
 		:"memory","rcx","r11"
 		);
 	return result;
