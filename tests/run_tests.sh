@@ -6,6 +6,7 @@ SEP="----------------------------------------"
 for file in test_*.c
 do
 	gcc -g -L ../release/ -Wall -o $file.run $file -lgord
+	#gcc -g -nostdlib -L ../release/ -Wall -o $file.run $file -lgord
 done
 
 echo -e "\n\n"
