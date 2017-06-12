@@ -11,3 +11,6 @@ tests/*.run
 # I use the Bear utility for compilation and code completion.
 # This hides the generated commands file
 compile_commands.json
+
+# Hide our syscall headers in staging area
+dist/sysnums_*.h
