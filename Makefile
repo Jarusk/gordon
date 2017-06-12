@@ -1,6 +1,6 @@
 CC=gcc
-CFLAGS=-c -Wall -fpic -O2
-LDFLAGS=-shared
+CFLAGS=-pipe -c -Wall -fpic -O2
+LDFLAGS=-shared -nostdlib
 SOURCES=$(wildcard $(SRC)*.c) $(wildcard $(SRC)/*/*.c)
 TESTS=$(wildcard $(TEST)*.c) $(wildcard $(TEST)/*/*.c)
 OBJECTS=$(SOURCES:.c=.o)
