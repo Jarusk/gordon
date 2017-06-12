@@ -1,6 +1,6 @@
-#include "../include/stdio.h"
-#include "../include/gord.h"
-#include "../include/stdlib.h"
+#include "../../include/stdio.h"
+#include "../../include/gord.h"
+#include "../../include/stdlib.h"
 
 Stack *g_stack_make(void){
 	Stack *result = (Stack *)malloc(sizeof(Stack));

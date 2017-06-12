@@ -1,6 +1,6 @@
-#include "../include/stdio.h"
-#include "../include/gord.h"
-#include "../include/stdlib.h"
+#include "../../include/stdio.h"
+#include "../../include/gord.h"
+#include "../../include/stdlib.h"
 
 Queue *g_queue_make(void){
 	Queue *result = (Queue *)malloc(sizeof(Queue));

@@ -1,4 +1,4 @@
-#include "../include/stdlib.h"
+#include "../../include/stdlib.h"
 
 /*
  * FOR NOW: this will implement the alloc functions as seen in the K&R C 2nd
