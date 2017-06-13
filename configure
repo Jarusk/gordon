@@ -1,4 +1,16 @@
 #!/bin/sh
 
+
+CC=""
+
+cmd_exists() {
+	type "$1" > /dev/null && CC="$1";
+}
+
 # Checking for C compiler
 
+cmd_exists clang
+cmd_exists gcc
+cmd_exists cc
+
+echo $CC
