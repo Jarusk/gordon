@@ -1,16 +1,23 @@
 #!/bin/sh
 
-
+# Define our config variables
 CC=""
+ARCH=""
+WIDTH=""
 
 cmd_exists() {
 	type "$1" > /dev/null && CC="$1";
 }
 
 # Checking for C compiler
-
 cmd_exists clang
 cmd_exists gcc
 cmd_exists cc
 
-echo $CC
+printf "Checking for C compiler... "
+
+if [ $CC != "" ]; then
+	printf "Yes\n"
+else
+	printf "No\n"
+fi
