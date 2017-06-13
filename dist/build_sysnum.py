@@ -5,8 +5,8 @@ import urllib.request
 REPO = "https://raw.githubusercontent.com/torvalds/linux/master"
 SYSCALL_32 = REPO + "/arch/x86/entry/syscalls/syscall_32.tbl"
 SYSCALL_64 = REPO + "/arch/x86/entry/syscalls/syscall_64.tbl"
-header_32 = "sysnums_32.h"
-header_64 = "sysnums_64.h"
+header_32 = "../src/internals/sysnums_32.h"
+header_64 = "../src/internals/sysnums_64.h"
 
 
 def get_tbl_list(src):
@@ -22,7 +22,8 @@ def get_tbl_list(src):
                 sysnum = elems[0]
                 name = elems[2]
                 sysname = "SYS_" + name
-                tbl.append((sysnum, name, sysname))
+                if int(sysnum) < 512:
+                    tbl.append((sysnum, name, sysname))
     return tbl
 
 
