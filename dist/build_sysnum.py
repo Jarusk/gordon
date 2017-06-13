@@ -5,8 +5,9 @@ import urllib.request
 REPO = "https://raw.githubusercontent.com/torvalds/linux/master"
 SYSCALL_32 = REPO + "/arch/x86/entry/syscalls/syscall_32.tbl"
 SYSCALL_64 = REPO + "/arch/x86/entry/syscalls/syscall_64.tbl"
-header_32 = "../src/internals/sysnums_32.h"
-header_64 = "../src/internals/sysnums_64.h"
+out_path = "../src/internals/"
+header_32 = "sysnums_32.h"
+header_64 = "sysnums_64.h"
 
 
 def get_tbl_list(src):
@@ -27,18 +28,18 @@ def get_tbl_list(src):
     return tbl
 
 
-def emit_header(name, tbl):
+def emit_header(out_dir, name, tbl):
     guard = name.replace(".", "_").upper()
 
-    with open(name, 'w') as f:
+    with open(out_dir+"/"+name, 'w') as f:
         f.write("#ifndef " + guard + "\n")
         f.write("#define " + guard + "\n\n")
         f.write("// AUTO-GENERATED, DO NOT MODIFY\n\n\n")
 
         for line in tbl:
-            f.write("#define\t\t")
+            f.write("#define\t")
             f.write(line[2]+"\t\t")
-            f.write(line[0]+"\t\t")
+            f.write(line[0]+"\t")
             f.write("//"+line[1]+"\n")
 
         f.write("\n#endif\n")
@@ -47,8 +48,8 @@ def emit_header(name, tbl):
 def main():
     tbl32 = get_tbl_list(SYSCALL_32)
     tbl64 = get_tbl_list(SYSCALL_64)
-    emit_header(header_32, tbl32)
-    emit_header(header_64, tbl64)
+    emit_header(out_path, header_32, tbl32)
+    emit_header(out_path, header_64, tbl64)
 
 
 if __name__ == '__main__':
