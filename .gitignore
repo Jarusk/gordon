@@ -1,6 +1,9 @@
 # Hide metadata files if generated on macOS
 .DS_Store
 
+# Hide unintended binaries from test programs
+a.out
+
 # Ignore our build and binary folders
 build/
 release/
