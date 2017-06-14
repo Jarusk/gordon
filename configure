@@ -24,9 +24,3 @@ fi
 
 # Check our arch
 
-
-if [ "$WIDTH" = "__32BIT__" ]; then
-		cp arch/sysnums_32.h include/sys/syscall.h
-else
-		cp arch/sysnums_64.h include/sys/syscall.h
-fi
