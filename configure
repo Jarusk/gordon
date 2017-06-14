@@ -11,13 +11,13 @@ cmd_exists() {
 
 # Checking for C compiler
 cmd_exists clang
-cmd_exists gcc
 cmd_exists cc
+cmd_exists gcc
 
 printf "Checking for C compiler... "
 
 if [ $CC != "" ]; then
-	printf "Yes\n"
+		printf "Yes ($CC)\n"
 else
 	printf "No\n"
 fi

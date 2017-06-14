@@ -1,4 +1,4 @@
-CC=clang
+CC=gcc
 CFLAGS=-pipe -c -Wall -fpic -O2
 LDFLAGS=-shared -nostdlib
 SOURCES=$(wildcard $(SRC)*.c) $(wildcard $(SRC)/*/*.c)
