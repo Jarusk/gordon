@@ -7,8 +7,7 @@ ARCH=x86_64
 include config.mak
 
 ARCHINCLUDE=arch/$(ARCH)/
-SOURCES=$(wildcard $(SRC)*.c) $(wildcard $(SRC)/*/*.c)
-TESTS=$(wildcard $(TEST)*.c) $(wildcard $(TEST)/*/*.c)
+SOURCES=$(wildcard $(SRC)*.c) $(wildcard $(SRC)*/*.c)
 OBJECTS=$(SOURCES:.c=.o)
 LIBNAME=libgord.so
 BUILD=/tmp/gordon_build/
