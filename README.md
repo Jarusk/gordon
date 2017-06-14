@@ -9,6 +9,7 @@ Overall, this library will serve to first reimplement certain parts of the C Sta
 -   "Fat" pointers
 -   Multi-tiered heap management
 -   Aim for C99 compat with unistd.h and signal.h
+-   Parts of POSIX (Semaphores, pthreads)
 -   The kitchen sink
 -   Reinvent the wheel as a 10999 sided polygon chiseled from bedrock
 -   **gord.h** will be a rolling component where I add things like general purpose data structures and pointer chunks
@@ -17,7 +18,15 @@ Overall, this library will serve to first reimplement certain parts of the C Sta
 #### Done
 -   stdbool.h <May 24, 2017>
 
-#### Partially Done / TODO
+#### Partially Done
+-   unistd.h
+-   stddef.h
+-   stdio.h
+-   stdlib.h
+-   syscall.h
+-   semaphore.h
+
+#### TODO
 -   assert.h
 -   ctype.h
 -   errno.h
@@ -27,11 +36,7 @@ Overall, this library will serve to first reimplement certain parts of the C Sta
 -   math.h
 -   setjmp.h
 -   signal.h
--   unistd.h
 -   stdarg.h
--   stddef.h
--   stdio.h
--   stdlib.h
 -   string.h
 -   time.h
 -   complex.h
