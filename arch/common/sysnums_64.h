@@ -1,5 +1,5 @@
-#ifndef SYS_SYSCALL_H
-#define SYS_SYSCALL_H
+#ifndef SYS_SYSCALL_64_H
+#define SYS_SYSCALL_64_H
 
 // AUTO-GENERATED, DO NOT MODIFY
 // sysnums_64.h

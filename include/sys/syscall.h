@@ -1,8 +1,6 @@
 #ifndef SYS_SYSCALL_H
 #define SYS_SYSCALL_H
 
-// AUTO-GENERATED, DO NOT MODIFY
-// WILL BE REPLACED BY CONFIG SCRIPT
-
+#include <bits/syscall.h>
 
 #endif

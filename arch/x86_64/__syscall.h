@@ -1,10 +1,7 @@
 #ifndef __SYSCALL_H
 #define __SYSCALL_H
 
-
-//THIS IS TEMPORARY TILL THE BUILD SCRIPTS WORK
 #include <syscall.h>
-
 
 static inline long __syscall0(long num){
 	unsigned long result;

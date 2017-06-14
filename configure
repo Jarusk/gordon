@@ -16,8 +16,8 @@ cmd_exists gcc
 
 printf "Checking for C compiler... "
 
-if [ $CC != "" ]; then
-		printf "Yes ($CC)\n"
+if [ "$CC" != "" ]; then
+		printf "Yes ("$CC")\n"
 else
 	printf "No\n"
 fi
@@ -25,7 +25,7 @@ fi
 # Check our arch
 
 
-if [ $width == "__32BIT__" ]; then
+if [ "$WIDTH" = "__32BIT__" ]; then
 		cp arch/sysnums_32.h include/sys/syscall.h
 else
 		cp arch/sysnums_64.h include/sys/syscall.h
