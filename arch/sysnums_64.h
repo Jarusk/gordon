@@ -1,7 +1,8 @@
-#ifndef SYSNUMS_64_H
-#define SYSNUMS_64_H
+#ifndef SYS_SYSCALL_H
+#define SYS_SYSCALL_H
 
 // AUTO-GENERATED, DO NOT MODIFY
+// sysnums_64.h
 
 
 #define	SYS_read		0	//read

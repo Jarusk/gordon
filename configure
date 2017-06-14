@@ -21,3 +21,12 @@ if [ $CC != "" ]; then
 else
 	printf "No\n"
 fi
+
+# Check our arch
+
+
+if [ $width == "__32BIT__" ]; then
+		cp arch/sysnums_32.h include/sys/syscall.h
+else
+		cp arch/sysnums_64.h include/sys/syscall.h
+fi

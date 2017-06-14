@@ -1,4 +1,4 @@
-#include "../internals/syscall.h"
+#include <__syscall.h>
 #include "../../include/unistd.h"
 
 int brk(void *addr){

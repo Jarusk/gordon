@@ -5,9 +5,10 @@ import urllib.request
 REPO = "https://raw.githubusercontent.com/torvalds/linux/master"
 SYSCALL_32 = REPO + "/arch/x86/entry/syscalls/syscall_32.tbl"
 SYSCALL_64 = REPO + "/arch/x86/entry/syscalls/syscall_64.tbl"
-out_path = "../src/internals/"
+out_path = "../arch/"
 header_32 = "sysnums_32.h"
 header_64 = "sysnums_64.h"
+guard = "SYS_SYSCALL_H"
 
 
 def get_tbl_list(src):
@@ -29,12 +30,11 @@ def get_tbl_list(src):
 
 
 def emit_header(out_dir, name, tbl):
-    guard = name.replace(".", "_").upper()
 
     with open(out_dir+"/"+name, 'w') as f:
         f.write("#ifndef " + guard + "\n")
         f.write("#define " + guard + "\n\n")
-        f.write("// AUTO-GENERATED, DO NOT MODIFY\n\n\n")
+        f.write("// AUTO-GENERATED, DO NOT MODIFY\n// "+name+"\n\n\n")
 
         for line in tbl:
             f.write("#define\t")

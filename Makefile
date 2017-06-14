@@ -1,6 +1,8 @@
 CC=gcc
 CFLAGS=-pipe -c -Wall -fpic -O2
 LDFLAGS=-shared -nostdlib
+ARCH=x86_64
+ARCHINCLUDE=arch/$(ARCH)/
 SOURCES=$(wildcard $(SRC)*.c) $(wildcard $(SRC)/*/*.c)
 TESTS=$(wildcard $(TEST)*.c) $(wildcard $(TEST)/*/*.c)
 OBJECTS=$(SOURCES:.c=.o)
@@ -19,10 +21,10 @@ MK_DIRS:
 	$(MKDIR_P) $(RELEASE)
 
 $(LIBNAME): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(addprefix $(BUILD),$(notdir $(OBJECTS))) -o $(addprefix $(RELEASE),$(LIBNAME))
+	$(CC) $(LDFLAGS) -I$(ARCHINCLUDE) $(addprefix $(BUILD),$(notdir $(OBJECTS))) -o $(addprefix $(RELEASE),$(LIBNAME))
 
 .c.o:
-	$(CC) $(CFLAGS) $< -o $(addprefix $(BUILD),$(notdir $@))
+	$(CC) $(CFLAGS) -I$(ARCHINCLUDE) $< -o $(addprefix $(BUILD),$(notdir $@))
 
 .PHONY: clean
 

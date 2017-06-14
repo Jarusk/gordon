@@ -1,7 +1,8 @@
-#ifndef SYSNUMS_32_H
-#define SYSNUMS_32_H
+#ifndef SYS_SYSCALL_H
+#define SYS_SYSCALL_H
 
 // AUTO-GENERATED, DO NOT MODIFY
+// sysnums_32.h
 
 
 #define	SYS_restart_syscall		0	//restart_syscall

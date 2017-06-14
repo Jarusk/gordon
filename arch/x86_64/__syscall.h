@@ -3,7 +3,7 @@
 
 
 //THIS IS TEMPORARY TILL THE BUILD SCRIPTS WORK
-#include "sysnums_64.h"
+#include <syscall.h>
 
 
 static inline long __syscall0(long num){
