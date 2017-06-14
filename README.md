@@ -17,7 +17,7 @@ Overall, this library will serve to first reimplement certain parts of the C Sta
 #### Done
 -   stdbool.h <May 24, 2017>
 
-#### TODO
+#### Partially Done / TODO
 -   assert.h
 -   ctype.h
 -   errno.h
