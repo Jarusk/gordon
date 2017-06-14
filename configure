@@ -35,11 +35,20 @@ case "$(arch)" in
 		*) failure "Unknown architecture \"$0\""
 esac
 
+printf "Checking for Arch... "
+
+if [ "$ARCH" != "" ]; then
+		printf "Yes ("$ARCH")\n"
+else
+		printf "No\n"
+fi
 
 
-
+printf "Emiting config.mak...\n"
 # Finally, emit our config
 cat <<EOF > config.mak
 ARCH=$ARCH
 CC=$CC
 EOF
+
+printf "DONE\n\n"
