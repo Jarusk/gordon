@@ -15,5 +15,8 @@ tests/*.run
 # This hides the generated commands file
 compile_commands.json
 
+# Ignore the generated config.mak
+config.mak
+
 # Hide our syscall headers in staging area
 dist/sysnums_*.h

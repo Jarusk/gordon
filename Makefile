@@ -2,6 +2,10 @@ CC=gcc
 CFLAGS=-pipe -c -Wall -fpic -O2 -nostdinc
 LDFLAGS=-shared -nostdlib -nostdinc
 ARCH=x86_64
+
+# Pull in our generated config.mak vars from ./configure
+include config.mak
+
 ARCHINCLUDE=arch/$(ARCH)/
 SOURCES=$(wildcard $(SRC)*.c) $(wildcard $(SRC)/*/*.c)
 TESTS=$(wildcard $(TEST)*.c) $(wildcard $(TEST)/*/*.c)
