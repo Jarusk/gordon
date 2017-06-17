@@ -44,11 +44,11 @@ int main(int argc, char **argv){
 	u.type = NODE_IVAL;
 	u.data.ival = 5;
 
-	g_enqueue(q,u);
+	g_push(q,u);
 
 	null_test(q);
 
-	Node_Data result = g_dequeue(q);
+	Node_Data result = g_pop(q);
 	print_node(result);
 
 	null_test(q);

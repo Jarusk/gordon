@@ -82,8 +82,25 @@ typedef struct Queue {
 
 Queue *g_queue_make(void);
 
-int g_enqueue(Queue *q, Node_Data data);
+int g_queue_push(Queue *q, Node_Data data);
 
-Node_Data g_dequeue(Queue *q);
+Node_Data g_queue_pop(Queue *q);
+
+
+// Deque implementation
+typedef struct Deque {
+	DL_Node *front;
+	DL_Node *back;
+	unsigned long long size;
+} Deque;
+
+Deque *g_deque_make(void);
+
+int g_deque_push(Deque *q, Node_Data data);
+int g_deque_push_front(Deque *q, Node_Data data);
+
+Node_Data g_deque_pop(Deque *q);
+Node_Data g_deque_pop_front(Deque *q);
+
 
 #endif
