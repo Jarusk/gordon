@@ -3,8 +3,8 @@ CFLAGS=-pipe -c -Wall -fpic -O2 -nostdinc
 LDFLAGS=-shared -nostdlib -nostdinc
 ARCH=x86_64
 
-# Pull in our generated config.mak vars from ./configure
-include config.mak
+#Pull in our generated config.mak vars from ./configure
+-include config.mak
 
 ARCHINCLUDE=arch/$(ARCH)/
 SOURCES=$(wildcard $(SRC)*.c) $(wildcard $(SRC)*/*.c)
@@ -17,7 +17,7 @@ RELEASE=release/
 MKDIR_P=mkdir -p
 RM_DIR=rm -rf
 
-all: $(SOURCES) MK_DIRS $(LIBNAME)
+all: config.mak $(SOURCES) MK_DIRS $(LIBNAME)
 
 MK_DIRS:
 	$(MKDIR_P) $(BUILD)
@@ -34,3 +34,4 @@ $(LIBNAME): $(OBJECTS)
 clean:
 	$(RM_DIR) $(BUILD)
 	$(RM_DIR) $(RELEASE)
+	if [ -f config.mak ]; then rm config.mak; fi
