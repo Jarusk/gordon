@@ -39,12 +39,17 @@ int main(int argc, char **argv){
 	Stack *st = (Stack *)g_stack_make();
 
 	null_test(st);
-	
+
 	Node_Data u;
 	u.type = NODE_IVAL;
 	u.data.ival = 5;
 
 	g_stack_push(st,u);
+	g_stack_push(st,u);
+	g_stack_push(st,u);
+	g_stack_push(st,u);
+
+
 
 	null_test(st);
 
@@ -52,6 +57,8 @@ int main(int argc, char **argv){
 	print_node(result);
 
 	null_test(st);
+
+	g_stack_free(st);
 
 	return 0;
 }

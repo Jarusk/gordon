@@ -32,3 +32,13 @@ Node_Data g_stack_pop(Stack *st){
 	st->size--;
 	return d;
 }
+
+void g_stack_free(Stack *st){
+	while(st->size > 0){
+		SL_Node *tmp = st->top;
+		st->top = st->top->next;
+		free(tmp);
+		st->size--;
+	}
+	free(st);
+}

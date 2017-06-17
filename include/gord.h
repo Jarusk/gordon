@@ -67,10 +67,9 @@ typedef struct Stack {
 } Stack;
 
 Stack *g_stack_make(void);
-
 int g_stack_push(Stack *st, Node_Data data);
-
 Node_Data g_stack_pop(Stack *st);
+void g_stack_free(Stack *st);
 
 
 // Queue implementation
@@ -81,10 +80,9 @@ typedef struct Queue {
 } Queue;
 
 Queue *g_queue_make(void);
-
 int g_queue_push(Queue *q, Node_Data data);
-
 Node_Data g_queue_pop(Queue *q);
+void g_queue_free(Queue *q);
 
 
 // Deque implementation
@@ -101,6 +99,27 @@ int g_deque_push_front(Deque *q, Node_Data data);
 
 Node_Data g_deque_pop(Deque *q);
 Node_Data g_deque_pop_front(Deque *q);
+void g_deque_free(Deque *q);
+
+
+// BinHeap implementation
+
+#define H_LEFT(i) (2*i + 1)
+#define H_RIGHT(i) (2*i + 2)
+#define H_PARENT(i) ((i - 1) / 2)
+
+typedef struct MaxHeap {
+	unsigned long size;
+	unsigned long cap;
+	long *elems;
+} MaxHeap;
+
+MaxHeap *g_maxheap_make(unsigned long cap);
+int g_maxheap_push(MaxHeap *h, long data);
+long g_maxheap_pop(MaxHeap *h);
+void g_maxheap_swap(long a, long b);
+void g_maxheap_heapify(MaxHeap *h, unsigned long index);
+void g_maxheap_free(MaxHeap *h);
 
 
 #endif

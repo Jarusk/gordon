@@ -39,7 +39,7 @@ int main(int argc, char **argv){
 	Queue *q = (Queue *)g_queue_make();
 
 	null_test(q);
-	
+
 	Node_Data u;
 	u.type = NODE_IVAL;
 	u.data.ival = 5;
@@ -52,6 +52,15 @@ int main(int argc, char **argv){
 	print_node(result);
 
 	null_test(q);
+
+	u.data.ival = 5;
+	g_queue_push(q,u);
+	g_queue_push(q,u);
+	g_queue_push(q,u);
+	g_queue_push(q,u);
+	null_test(q);
+
+	g_queue_free(q);
 
 	return 0;
 }

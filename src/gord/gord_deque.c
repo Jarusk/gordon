@@ -15,7 +15,7 @@ int g_deque_push(Deque *q, Node_Data data){
 	new->data = data;
 	new->next = NULL;
 	new->prev = NULL;
-	
+
 	if(q->size == 0){
 		q->front = new;
 		q->back = new;
@@ -33,7 +33,7 @@ int g_deque_push_front(Deque *q, Node_Data data){
 	new->data = data;
 	new->next = NULL;
 	new->prev = NULL;
-	
+
 	if(q->size == 0){
 		q->front = new;
 		q->back = new;
@@ -83,4 +83,14 @@ Node_Data g_deque_pop_front(Deque *q){
 	free(tmp);
 	q->size--;
 	return d;
+}
+
+void g_deque_free(Deque *q){
+	DL_Node *tmp = NULL;
+	while(q->back != NULL){
+		tmp = q->back;
+		q->back = tmp->prev;
+		free(tmp);
+	}
+	free(q);
 }

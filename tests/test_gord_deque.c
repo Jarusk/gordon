@@ -89,10 +89,7 @@ int main(int argc, char **argv){
 
 	null_test(q);
 
-	result = g_deque_pop_front(q);
-	print_node(result);
-
-	null_test(q);
+	g_deque_free(q);
 
 
 	return 0;

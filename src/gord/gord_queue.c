@@ -14,7 +14,7 @@ int g_queue_push(Queue *q, Node_Data data){
 	SL_Node *new = (SL_Node *)malloc(sizeof(SL_Node));
 	new->data = data;
 	new->next = NULL;
-	
+
 	if(q->size == 0){
 		q->front = new;
 		q->back = new;
@@ -39,4 +39,14 @@ Node_Data g_queue_pop(Queue *q){
 	free(tmp);
 	q->size--;
 	return d;
+}
+
+void g_queue_free(Queue *q){
+	SL_Node *tmp = NULL;
+	while (q->front != NULL) {
+		tmp = q->front;
+		q->front = tmp->next;
+		free(tmp);
+	}
+	free(q);
 }
