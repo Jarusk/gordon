@@ -4,6 +4,9 @@
 CC=""
 ARCH=""
 WIDTH=""
+DEBUG=0
+CFLAGS="-pipe -c -Wall -fpic -O2 -nostdinc"
+LDFLAGS="-shared -nostdlib -nostdinc"
 
 cmd_exists() {
 	type "$1" > /dev/null && CC="$1";
@@ -44,11 +47,19 @@ else
 fi
 
 
+#Check for debug mode
+if [ "$DEBUG" != 0 ]; then
+		CFLAGS="$CFLAGS -g"
+fi
+
+
 printf "Emiting config.mak...\n"
 # Finally, emit our config
 cat <<EOF > config.mak
 ARCH=$ARCH
 CC=$CC
+CFLAGS=$CFLAGS
+LDFLAGS=$LDFLAGS
 EOF
 
 printf "DONE\n\n"

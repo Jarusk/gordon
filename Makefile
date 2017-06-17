@@ -1,6 +1,7 @@
+# THE NEXT FOUR VARS ARE OVERRIDDEN BY config.mak
 CC=
-CFLAGS=-pipe -c -Wall -fpic -O2 -nostdinc
-LDFLAGS=-shared -nostdlib -nostdinc
+CFLAGS=
+LDFLAGS=
 ARCH=
 
 #Pull in our generated config.mak vars from ./configure
