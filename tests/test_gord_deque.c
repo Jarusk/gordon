@@ -2,11 +2,11 @@
 #include "../include/stdio.h"
 #include "../include/stdlib.h"
 
-void null_test(Stack *st){
-	if(st->top == NULL){
-		printf("Empty stack\n");
+void null_test(Deque *q){
+	if(q->front == NULL){
+		printf("Empty Queue\n");
 	}else{
-		printf("Stack has %llu element(s)\n",st->size);
+		printf("Queue has %llu element(s)\n",q->size);
 	}
 }
 
@@ -36,22 +36,22 @@ void print_node(Node_Data d){
 }
 
 int main(int argc, char **argv){
-	Stack *st = (Stack *)g_stack_make();
+	Deque *q = (Deque *)g_deque_make();
 
-	null_test(st);
+	null_test(q);
 	
 	Node_Data u;
 	u.type = NODE_IVAL;
 	u.data.ival = 5;
 
-	g_stack_push(st,u);
+	g_deque_push(q,u);
 
-	null_test(st);
+	null_test(q);
 
-	Node_Data result = g_stack_pop(st);
+	Node_Data result = g_deque_pop(q);
 	print_node(result);
 
-	null_test(st);
+	null_test(q);
 
 	return 0;
 }

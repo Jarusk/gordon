@@ -68,9 +68,9 @@ typedef struct Stack {
 
 Stack *g_stack_make(void);
 
-int g_push(Stack *st, Node_Data data);
+int g_stack_push(Stack *st, Node_Data data);
 
-Node_Data g_pop(Stack *st);
+Node_Data g_stack_pop(Stack *st);
 
 
 // Queue implementation
