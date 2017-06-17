@@ -42,16 +42,58 @@ int main(int argc, char **argv){
 	
 	Node_Data u;
 	u.type = NODE_IVAL;
-	u.data.ival = 5;
 
+	u.data.ival = 5;
 	g_deque_push(q,u);
+
+	u.data.ival = 6;
+	g_deque_push(q,u);
+
+	u.data.ival = 7;
+	g_deque_push(q,u);
+
 
 	null_test(q);
 
 	Node_Data result = g_deque_pop(q);
 	print_node(result);
 
+	result = g_deque_pop_front(q);
+	print_node(result);
+
 	null_test(q);
+
+	result = g_deque_pop_front(q);
+	print_node(result);
+
+	null_test(q);
+
+
+	u.data.ival = 5;
+	g_deque_push_front(q,u);
+
+	u.data.ival = 6;
+	g_deque_push_front(q,u);
+
+	u.data.ival = 7;
+	g_deque_push(q,u);
+
+
+	null_test(q);
+
+	result = g_deque_pop(q);
+	print_node(result);
+
+	result = g_deque_pop_front(q);
+	print_node(result);
+
+	null_test(q);
+
+	result = g_deque_pop_front(q);
+	print_node(result);
+
+	null_test(q);
+
 
 	return 0;
 }

@@ -55,8 +55,15 @@ Node_Data g_deque_pop(Deque *q){
 
 	Node_Data d = q->back->data;
 	DL_Node *tmp = q->back;
-	q->back->prev->next = NULL;
-	q->back = q->back->prev;
+
+	if (q->size == 1){
+		q->back = NULL;
+		q->front = NULL;
+	}else{
+		q->back = q->back->prev;
+		q->back->next = NULL;
+	}
+
 	free(tmp);
 	q->size--;
 	return d;
