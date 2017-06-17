@@ -10,7 +10,7 @@ Queue *g_queue_make(void){
 	return result;
 }
 
-int g_enqueue(Queue *q, Node_Data data){
+int g_queue_push(Queue *q, Node_Data data){
 	SL_Node *new = (SL_Node *)malloc(sizeof(SL_Node));
 	new->data = data;
 	new->next = NULL;
@@ -26,7 +26,7 @@ int g_enqueue(Queue *q, Node_Data data){
 	return 0;
 }
 
-Node_Data g_dequeue(Queue *q){
+Node_Data g_queue_pop(Queue *q){
 	if(q->size <= 0){
 		Node_Data d;
 		d.type = NODE_NULL;

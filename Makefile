@@ -34,4 +34,4 @@ $(LIBNAME): $(OBJECTS)
 clean:
 	$(RM_DIR) $(BUILD)
 	$(RM_DIR) $(RELEASE)
-	if [ -f config.mak ]; then rm config.mak; fi
+	#if [ -f config.mak ]; then rm config.mak; fi
