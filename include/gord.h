@@ -115,9 +115,8 @@ typedef struct MaxHeap {
 } MaxHeap;
 
 MaxHeap *g_maxheap_make(unsigned long cap);
-int g_maxheap_push(MaxHeap *h, long data);
-long g_maxheap_pop(MaxHeap *h);
-void g_maxheap_swap(long a, long b);
+int g_maxheap_insert(MaxHeap *h, long data);
+long g_maxheap_fetch(MaxHeap *h, long *result);
 void g_maxheap_heapify(MaxHeap *h, unsigned long index);
 void g_maxheap_free(MaxHeap *h);
 
