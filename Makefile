@@ -18,7 +18,7 @@ RELEASE=release/
 MKDIR_P=mkdir -p
 RM_DIR=rm -rf
 
-all: config.mak $(SOURCES) MK_DIRS $(LIBNAME)
+all: MK_DIRS $(LIBNAME)
 
 MK_DIRS:
 	$(MKDIR_P) $(BUILD)
@@ -27,7 +27,7 @@ MK_DIRS:
 $(LIBNAME): $(OBJECTS)
 	$(CC) $(LDFLAGS) -I$(ARCHINCLUDE) -Iinclude/ $(addprefix $(BUILD),$(notdir $(OBJECTS))) -o $(addprefix $(RELEASE),$(LIBNAME))
 
-.c.o:
+.c.o: $(SOURCES)
 	$(CC) $(CFLAGS) -I$(ARCHINCLUDE) -Iinclude/ $< -o $(addprefix $(BUILD),$(notdir $@))
 
 .PHONY: clean
