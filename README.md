@@ -1,3 +1,5 @@
+![Gordon Logo](dist/logo.png)
+
 # Gordon
 
 *If I'm writing bloatware, might as well be in C*
