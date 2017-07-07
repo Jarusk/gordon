@@ -19,6 +19,7 @@ Overall, this library will serve to first reimplement certain parts of the C Sta
 ## Headers
 #### Done
 -   stdbool.h <May 24, 2017>
+-   Not a header, but syscall interface implemented for x86_64 and ARM <June 15, 2017>
 
 #### Partially Done
 -   unistd.h
