@@ -112,3 +112,16 @@ void free(void *ap){
 
 	freep = p;
 }
+
+
+// This is clearly inefficient, but to TEMPORARILY implement realloc,
+// I'm simply going to use malloc to create the new space and then 
+// copy the data over from the previous location then free it
+void *realloc(void *old, size_t size){
+		size_t *new = (size_t *)malloc(size);
+		for(int i = 0; i < ((Header *)(old - 1))->s.size - 1; i++){
+			new[i] = ((size_t)old+i);
+		}
+		free(old);
+		return new;
+}

@@ -9,6 +9,7 @@
 #define RAND_MAX 4294967295
 
 void *malloc(size_t);
+void *realloc(void *,size_t);
 void free(void *);
 int rand(void);
 
