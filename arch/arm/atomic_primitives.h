@@ -5,7 +5,15 @@
 
 
 static inline long __atomic_cas(volatile long *p, long test, long set){
-	asm volatile ();
+		
+		// Helpful article: http://infocenter.arm.com/help/topic/com.arm.doc.dht0008a/DHT0008A_arm_synchronization_primitives.pdf
+		
+		register long r0 asm("r0") = test;
+		register long r1 asm("r1") = set;
+		register volatile long *r2 asm("r2") = p;
+		long prev_val, result;
+
+		asm volatile ();
 	return test;
 }
 
